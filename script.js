@@ -28,3 +28,4 @@ fetcher()
   `
   main.insertAdjacentHTML('beforeend', html)
 }))
+.catch(err => console.log(err))
