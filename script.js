@@ -12,24 +12,26 @@ const fetcher = async () => {
 }
 let main = document.querySelector('.blogs')
 
+let dj = fetcher().then(data => dj = data.status)
+console.log(dj)
 
-fetcher()
-.then(e => blog = e.articles)
-.then(blog => blog.map(el => {
-  const html = `
-  <div class="card">
-      <div class="card__img">
-        <img src="${el.urlToImage}" alt="#" id="card__img-1">
-      </div>
-      <div class="card__desc">
-        <h2 class="desc__title">${el.title}</h2>
-        <p class="desc__text">
-        ${el.description}
-        </p>
-        <a href="${el.url}" target="_blank" class="desc__btn">Read more</a>
-      </div>
-    </div>
-  `
-  main.insertAdjacentHTML('beforeend', html)
-}))
-.catch(err => console.log(err.message))
+// fetcher()
+// .then(e => blog = e.articles)
+// .then(blog => blog.map(el => {
+//   const html = `
+//   <div class="card">
+//       <div class="card__img">
+//         <img src="${el.urlToImage}" alt="#" id="card__img-1">
+//       </div>
+//       <div class="card__desc">
+//         <h2 class="desc__title">${el.title}</h2>
+//         <p class="desc__text">
+//         ${el.description}
+//         </p>
+//         <a href="${el.url}" target="_blank" class="desc__btn">Read more</a>
+//       </div>
+//     </div>
+//   `
+//   main.insertAdjacentHTML('beforeend', html)
+// }))
+// .catch(err => console.log(err.message))
